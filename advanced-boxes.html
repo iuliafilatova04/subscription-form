@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Selectors | FORMS</title>
+    <style>
+        body {
+            background-color: #456;
+            font-family: Arial;
+        }
+        #subscribe-form {
+            color: white;
+        }
+        #subscribe-form label {
+            display: block;
+            padding: 5px;
+        }
+        #subscribe-form>label>input {
+            padding: 5px;
+            background-color: #ddd;
+
+            outline: none;
+            border: 1px solid #123;
+        }
+        #subscribe-form>label>input:focus {
+            background-color: #fff;
+        }
+        #subscribe-form>label>input:valid {
+            border-color: green;
+        }
+        #subscribe-form>label>input:invalid {
+            border-color: red;
+        }
+        #subscribe-form button {
+            background-color: #123;
+            border: none;
+            color: white;
+            padding: 10px 30px;
+        }
+        #subscribe-form span {
+            color: #89A;
+        }
+        #subscribe-form input:checked + span {
+            color: white;
+        }
+        #subscribe-form>div>label>input {
+            display: none;
+        }
+        #subscribe-form>div>label>input + span::before {
+            content: "◯";
+            padding-right: 5px;
+        }
+        #subscribe-form>div>label>input:checked + span::before {
+            content: "◉";
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="???" id="subscribe-form">
+        <h2>Subscribe to out newsletter</h2>
+        <label>
+            <input
+                type="text" 
+                placeholder="Your full name"
+                autofocus
+                />
+        </label>
+        <label>
+            <input
+                type="text" 
+                placeholder="Your phone name"
+                pattern="373-[0-9]{3}-[0-9]{3}-[0-9]{3}"/>
+        </label>
+        <label>
+            <input type="text" placeholder="Your email"/>
+        </label>
+
+        <div>
+            <label>
+                <input type="checkbox"/> <span>Sports</span>
+            </label>
+            <label>
+                <input type="checkbox"/> <span>Science</span>
+            </label>
+            <label>
+                <input type="checkbox"/> <span>Cars</span>
+            </label>
+        </div>
+        <button>GO!!!</button>
+    </form>
+
+</body>
+</html>
